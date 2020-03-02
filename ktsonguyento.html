@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kt số nguyên tố</title>
+</head>
+<body>
+<p>KT số nguyên tố</p>
+<input type="number" id="num-input"><br>
+<button onclick="check()">Bắt đầu</button>
+<script>
+    function isprime(number) {
+        if (Number.isInteger(number)){
+            for (let i= 2; i <= number / Math.sqrt(number);i++){
+                if (number % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function check(num) {
+        num = +document.getElementById("num-input").value;
+        if (isprime(num)){
+            alert("số này là số nguyên tố")
+        }else {
+            alert("số này không phải là số nguyên tố");
+        }
+    }
+</script>
+</body>
+</html>
